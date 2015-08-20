@@ -207,19 +207,23 @@
     $h2-size: round($h3-size * $type-scale);
     $h1-size: round($h2-size * $type-scale);
 
-    h1, .u-h1 {
+    h1,
+    .u-h1 {
         @include rem(font-size, $h1-size);
     }
 
-    h2, .u-h2 {
+    h2,
+    .u-h2 {
         @include rem(font-size, $h2-size);
     }
 
-    h3, .u-h3 {
+    h3,
+    .u-h3 {
         @include rem(font-size, $h3-size);
     }
 
-    h4, .u-h4 {
+    h4,
+    .u-h4 {
         @include rem(font-size, $h4-size);
     }
 }
