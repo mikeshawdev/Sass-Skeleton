@@ -202,6 +202,8 @@
  * @requires {mixin} rem
  */
 @mixin type($type-scale: $base-type-scale) {
+    $h6-size: round($base-font-size * $type-scale);
+    $h5-size: round($base-font-size * $type-scale);
     $h4-size: round($base-font-size * $type-scale);
     $h3-size: round($h4-size * $type-scale);
     $h2-size: round($h3-size * $type-scale);
@@ -225,6 +227,16 @@
     h4,
     .u-h4 {
         @include rem(font-size, $h4-size);
+    }
+
+    h5,
+    .u-h5 {
+        @include rem(font-size, $h5-size);
+    }
+
+    h6,
+    .u-h6 {
+        @include rem(font-size, $h6-size);
     }
 }
 
