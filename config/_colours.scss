@@ -8,4 +8,24 @@
 /**
  * Brand colours
  */
-$brand: #bada55;
+$colour-brand-primary: #bada55;
+
+
+/**
+ * Text colours
+ */
+$base-font-colour: #333;
+$base-heading-font-colour: #424242;
+
+
+/**
+ * Links
+ */
+$base-link-colour: $colour-brand-primary;
+
+
+/**
+ * Text selection
+ */
+$base-selection-font-colour: $base-font-colour;
+$base-selection-background-colour: #b3d4fc;

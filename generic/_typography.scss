@@ -9,11 +9,11 @@
  * Text selection styles
  */
 ::selection {
-    background: $brand;
-    color: #fff;
+    background: $base-selection-background-colour;
+    color: $base-selection-font-colour;
 }
 
 ::-moz-selection {
-    background: $brand;
-    color: #fff;
+    background: $base-selection-background-colour;
+    color: $base-selection-font-colour;
 }

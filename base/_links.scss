@@ -6,11 +6,11 @@
 
 
 a {
-    color: $brand;
+    color: $base-link-colour;
     text-decoration: none;
     transition: color .2s ease-in-out;
 
     @include hocus {
-        color: darken($brand, 10%);
+        color: darken($base-link-colour, 10%);
     }
 }
