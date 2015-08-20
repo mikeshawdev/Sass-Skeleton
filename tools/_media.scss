@@ -6,12 +6,36 @@
 
 
 /**
- * Generic media query mixin
+ * Generic media query mixin, suitable for specific breakpoints
  *
  * @param {mixed} $width
+ * @param {string} $min-or-max-width
  */
-@mixin media($width) {
-    @media screen and (min-width: $width) {
+@mixin breakpoint($width, $min-or-max-width: 'min-width') {
+    @media screen and ($min-or-max-width: $width) {
+        @content;
+    }
+}
+
+
+
+
+
+/**
+ * Include a predefined media query
+ *
+ * @param {string} $query The key for the query in $queries
+ */
+@mixin query($query: '') {
+    @if (variable-exists(queries) == false) {
+        @error "Cannot find $queries map";
+    }
+
+    @if (map-has-key($queries, $query) == false) {
+        @error "Cannot find specified query '#{$query}' in $queries";
+    }
+
+    @media #{map-get($queries, $query)} {
         @content;
     }
 }
