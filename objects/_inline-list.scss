@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| $OBJECTS.NAV
+| $OBJECTS.INLINE-LIST
 |--------------------------------------------------------------------------
 */
 
@@ -15,8 +15,8 @@
  * 3. Make links fill their list items which makes selecting them easier,
  *    especially on touch devices
  */
-.o-nav,
-%o-nav {
+.o-inline-list,
+%o-inline-list {
     list-style: none;
     margin-left: 0;   /* 1 */
     padding-left: 0;  /* 1 */

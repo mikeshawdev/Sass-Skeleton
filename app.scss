@@ -20,7 +20,7 @@
  *
  * OBJECTS
  * Box           ......  For boxing off content
- * Nav           ......  Throws a list into horizontal mode suited to navigation
+ * Inline list   ......
  * Layout        ......  For creating grid-like layouts
  *
  * GENERIC
@@ -28,7 +28,7 @@
  * Box-sizing    ......
  * Typography    ......
  *
- * ELEMENTS
+ * BASE
  * Page          ......  Shared page styles
  * Headings      ......
  * Links         ......
@@ -50,7 +50,7 @@
 @import "config/page";
 
 @import "objects/box";
-@import "objects/nav";
+@import "objects/inline-list";
 @import "objects/layout";
 
 @import "generic/normalize";
