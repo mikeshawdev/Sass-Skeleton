@@ -4,10 +4,11 @@
 |--------------------------------------------------------------------------
 */
 
+
 /**
- * Spacing units for elements
+ * Standard spacing units
  */
-$base-spacing-unit: $base-font-size * $base-line-height;
+$base-spacing-unit: round($base-font-size * $base-line-height);
 $small-spacing-unit: round(halve($base-spacing-unit));
 $large-spacing-unit: round(double($base-spacing-unit));
 
@@ -16,6 +17,6 @@ $large-spacing-unit: round(double($base-spacing-unit));
 
 
 /**
- * Gutter width for the layout grid
+ * Gutter width for the layout units
  */
 $layout-gutter-width: $small-spacing-unit;
