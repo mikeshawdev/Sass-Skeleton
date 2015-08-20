@@ -8,9 +8,9 @@
 /**
  * Font weights
  */
-$light: 300;
-$regular: 400;
-$bold: 600;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
 
 
 /**
@@ -20,7 +20,7 @@ $base-font-size: 16px;
 $base-line-height: 1.45;
 $base-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base-font-colour: #333;
-$base-font-weight: $regular;
+$base-font-weight: $font-weight-regular;
 
 
 /**
@@ -29,7 +29,7 @@ $base-font-weight: $regular;
 $base-heading-line-height: 1.2;
 $base-heading-font-stack: $base-font-stack;
 $base-heading-font-colour: #434343;
-$base-heading-font-weight: $bold;
+$base-heading-font-weight: $font-weight-bold;
 
 
 /**
