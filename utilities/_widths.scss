@@ -13,14 +13,14 @@
  * 2. If we have setup any breakpoints, create width classes for
  *    each namespace
  */
-@include grid-setup(); /* 1 */
+@include setup-width-classes(); /* 1 */
 
 @if variable-exists(breakpoints) {
 
     @each $breakpoint, $width in $breakpoints {
 
         @media screen and (max-width: $width) {
-            @include grid-setup("#{$breakpoint}-"); /* 2 */
+            @include setup-width-classes("#{$breakpoint}-"); /* 2 */
         }
     }
 }
