@@ -41,11 +41,6 @@
  * Widths        ......  Percentage-based width classes
  * Helpers       ......  Helper classes to use as needed
  */
-
-
-
-
-
 @import "tools/functions";
 @import "tools/mixins";
 @import "tools/media";
@@ -62,11 +57,11 @@
 @import "generic/box-sizing";
 @import "generic/typography";
 
-@import "elements/page";
-@import "elements/headings";
-@import "elements/links";
-@import "elements/lists";
-@import "elements/images";
+@import "base/page";
+@import "base/headings";
+@import "base/links";
+@import "base/lists";
+@import "base/images";
 
 @import "utilities/widths";
 @import "utilities/helpers";
