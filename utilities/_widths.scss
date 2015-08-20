@@ -19,7 +19,7 @@
 
     @each $breakpoint, $width in $breakpoints {
 
-        @media screen and (max-width: $width) {
+        @media screen and (min-width: $width) {
             @include setup-width-classes("#{$breakpoint}-"); /* 2 */
         }
     }
