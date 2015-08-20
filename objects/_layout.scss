@@ -10,19 +10,20 @@
  *
  * @link http://bit.ly/1mPqf5W
  *
- * 1. Fix whitespace between inline-block elements
- * 2. The negative margin compensates for the padding on `.grid__unit`
+ * 1. The negative margin compensates for the padding on `.layout__item`
  *    elements, aligning them with the sides of the grid
+ * 2. Fix whitespace between inline-block elements
  */
 .o-layout,
 %o-layout {
-    font-size: 0; /* 1 */
-    @include rem(margin, 0 (-$layout-gutter-width)); /* 2 */
+    @include rem(margin, 0 (-$layout-gutter-width)); /* 1 */
+    font-size: 0; /* 2 */
 }
 
-    .o-layout__unit,
-    %o-layout__unit {
+    .o-layout__item,
+    %o-layout__item {
         display: inline-block;
-        @include rem(font-size, $base-font-size); /* 1 */
+        vertical-align: top;
         @include rem(padding, 0 $layout-gutter-width);
+        @include rem(font-size, $base-font-size); /* 2 */
     }
