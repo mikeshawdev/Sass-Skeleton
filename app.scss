@@ -4,64 +4,25 @@
 |--------------------------------------------------------------------------
 */
 
-
-/**
- * CONTENTS
- *
- * TOOLS
- * Functions     ......
- * Mixins        ......
- * Media         ......  Media-query mixins
- *
- * CONFIG
- * Colours       ......
- * Typography    ......
- * Page          ......  Page structure settings
- *
- * OBJECTS
- * Box           ......  For boxing off content
- * Inline list   ......
- * Layout        ......  For creating grid-like layouts
- *
- * GENERIC
- * Normalize     ......  normalize.css
- * Box-sizing    ......
- * Typography    ......
- *
- * BASE
- * Page          ......  Shared page styles
- * Headings      ......
- * Links         ......
- * Lists         ......
- * Images        ......
- *
- * COMPONENTS
- *
- * UTILITIES
- * Widths        ......  Percentage-based width classes
- * Helpers       ......  Helper classes to use as needed
- */
 @import "tools/functions";
 @import "tools/mixins";
-@import "tools/media";
 
-@import "config/colours";
-@import "config/typography";
-@import "config/page";
-
-@import "objects/box";
-@import "objects/inline-list";
-@import "objects/layout";
+@import "settings/global";
+@import "settings/structural";
+@import "settings/typography";
+@import "settings/theme";
 
 @import "generic/normalize";
+@import "generic/reset";
 @import "generic/box-sizing";
-@import "generic/typography";
 
 @import "base/page";
 @import "base/headings";
 @import "base/links";
-@import "base/lists";
 @import "base/images";
+@import "base/lists";
 
-@import "utilities/widths";
-@import "utilities/helpers";
+@import "objects/layout";
+@import "objects/inline-list";
+@import "objects/nav";
+@import "objects/box";

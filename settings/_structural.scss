@@ -1,0 +1,9 @@
+/*
+|--------------------------------------------------------------------------
+| $SETTINGS.STRUCTURAL
+|--------------------------------------------------------------------------
+*/
+
+$base-spacing-unit: $base-font-size * $base-line-height;
+$small-spacing-unit: halve($base-spacing-unit);
+$large-spacing-unit: double($base-spacing-unit);

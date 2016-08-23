@@ -4,79 +4,74 @@
 |--------------------------------------------------------------------------
 */
 
-
 /**
  * Strip any units from `$value`
  *
- * @param {string} $value
+ * @param string $value
  *
- * @return {integer}
+ * @return integer
  */
-@function strip-unit($value) {
+@function strip-units($value) {
     @return $value / ($value * 0 + 1);
 }
-
-
-
-
-
-/**
- * Double `$value`
- *
- * @param {integer} $value
- *
- * @return {integer}
- */
-@function double($value) {
-    @return $value * 2;
-}
-
-
-
-
-
-/**
- * Halve `$value`
- *
- * @param {integer} $value
- *
- * @return {integer}
- */
-@function halve($value) {
-    @return $value * .5;
-}
-
-
-
-
-
-
-/**
- * Split an rgb value into it's component red, green and blue colours
- *
- * @param  {rgb|hex} $rgb
- *
- * @return {map} A map containing the split values
- */
-@function split-into-rgb($rgb) {
-    @return (
-        "red": red($rgb),
-        "green": green($rgb),
-        "blue": blue($rgb)
-    );
-}
-
-
-
-
 
 /**
  * Covert a px value to the rem equivalent
  *
- * @param {number} $value
+ * @param number $value
  *
- * @return {number} The rem equivalent
+ * @return number
  */
 @function rem($value) {
     @return ($value / $base-font-size) * 1rem;
+}
+
+/**
+ * Halve a given value
+ *
+ * @param int|float
+ *
+ * @return int|float
+ */
+@function halve ($value)
+{
+    @return $value * .5;
+}
+
+/**
+ * Double a given value
+ *
+ * @param int|float
+ *
+ * @return int|float
+ */
+@function double ($value) {
+    @return $value * 2;
+}
+
+/**
+ * Convert a list to a string
+ *
+ * @param list $list
+ * @param string $glue
+ * @param boolean $is-nested
+ *
+ * @return string
+ *
+ * @link http://bit.ly/1wHYOmK
+ */
+@function to-string($list, $glue: '', $is-nested: false) {
+    $result: null;
+
+    @for $i from 1 through length($list) {
+        $e: nth($list, $i);
+
+        @if type-of($e) == list {
+            $result: $result#{to-string($e, $glue, true)};
+        } @else {
+            $result: if($i != length($list) or $is-nested, $result #{$e}#{$glue}, $result#{$e});
+        }
+    }
+
+    @return $result;
 }

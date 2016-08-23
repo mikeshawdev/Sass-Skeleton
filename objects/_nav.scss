@@ -1,0 +1,20 @@
+/*
+|--------------------------------------------------------------------------
+| $OBJECTS.NAV
+|--------------------------------------------------------------------------
+*/
+
+/**
+ * Adds an extra bit of structure suitable for navigation lists
+ *
+ * 1. Make links fill their list items which makes selecting them easier,
+ *    especially on touch devices
+ */
+.o-nav,
+%o-nav {
+    @extend %o-inline-list;
+
+    li > a {
+        display: block; /* 1 */
+    }
+}

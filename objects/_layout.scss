@@ -4,11 +4,13 @@
 |--------------------------------------------------------------------------
 */
 
+// Config
+$layout-gutter-width: $base-spacing-unit;
+
 
 /**
- * For creating layouts
- *
- * @link http://bit.ly/1mPqf5W
+ * For creating grid-like layouts. This object is designed to be used with the
+ * width utility classes
  *
  * 1. The negative margin compensates for the padding on `.layout__item`
  *    elements, aligning them with the sides of the grid

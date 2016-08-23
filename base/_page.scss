@@ -4,7 +4,6 @@
 |--------------------------------------------------------------------------
 */
 
-
 /**
  * High-, page-level styling.
  *
@@ -12,7 +11,7 @@
  *
  * 1. Set the default `font-size` and `line-height` for the entire project,
  *    sourced from our default variables. The `font-size` is calculated to exist
- *    in ems, the `line-height` is calculated to exist unitlessly.
+ *    in ems.
  * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
  *    navigating between pages that do/do not have enough content to produce
  *    scrollbars naturally.
@@ -25,29 +24,25 @@
 html {
     font-size: ($base-font-size / 16px) * 1em; /* 1 */
     line-height: $base-line-height; /* 1 */
-    font-family: $base-font-stack;
-    font-weight: $base-font-weight;
-    color: $base-font-colour;
+    font-family: $body-font-stack;
+    font-weight: $body-font-weight;
+    color: $body-font-colour;
 
     overflow-y: scroll; /* 2 */
     min-height: 100%; /* 3 */
 
     -webkit-text-size-adjust: 100%; /* 4 */
-        -ms-text-size-adjust: 100%; /* 4 */
+    -ms-text-size-adjust: 100%; /* 4 */
 
     -moz-osx-font-smoothing: grayscale; /* 5 */
-     -webkit-font-smoothing: antialiased; /* 5 */
+    -webkit-font-smoothing: antialiased; /* 5 */
 }
 
-
-
-
-
 /**
- * Set a vertical rhythm for our site
+ * Set a vertical rhythm for the whole site
  *
- * All block level elements get an identical margin-bottom, for a nice vertical
- * rhythm
+ * All block level elements get an identical bottom margin, for a consistent
+ * vertical rhythm
  *
  * 1. Remove the margin from the last child of an element to avoid extra margins
  */
@@ -58,10 +53,10 @@ hr,
 table,
 fieldset, figure,
 pre,
-%margin-bottom {
+%u-margin-bottom {
     @include rem(margin, 0 0 $base-spacing-unit);
 
     > :last-child {
-        margin-bottom: 0;  /* 1 */
+        margin-bottom: 0; /* 1 */
     }
 }
