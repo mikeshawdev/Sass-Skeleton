@@ -27,6 +27,17 @@
 }
 
 /**
+ * Quarter a given value
+ *
+ * @param int|float
+ *
+ * @return int|float
+ */
+@function quarter ($value) {
+    @return $value * .25;
+}
+
+/**
  * Halve a given value
  *
  * @param int|float
@@ -47,6 +58,17 @@
  */
 @function double ($value) {
     @return $value * 2;
+}
+
+/**
+ * Quadruple a given value
+ *
+ * @param int|float
+ *
+ * @return int|float
+ */
+@function quadruple ($value) {
+    @return $value * 4;
 }
 
 /**
