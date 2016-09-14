@@ -7,11 +7,10 @@
 /**
  * Throw a list into horizontal mode and remove the list styles
  *
- * 1. Make sure we take away any identation that may be applied to lists
+ * 1. Remove any left-hand identation
  * 2. Make list items line up next to each other
  */
-.o-inline-list,
-%o-inline-list {
+@mixin inline-list {
     list-style: none;
     margin-left: 0; /* 1 */
     padding-left: 0; /* 1 */
@@ -19,4 +18,8 @@
     > li {
         display: inline-block; /* 2 */
     }
+}
+
+.o-inline-list {
+    @include inline-list;
 }

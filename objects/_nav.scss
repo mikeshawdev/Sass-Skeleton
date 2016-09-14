@@ -10,11 +10,14 @@
  * 1. Make links fill their list items which makes selecting them easier,
  *    especially on touch devices
  */
-.o-nav,
-%o-nav {
-    @extend %o-inline-list;
+@mixin nav {
+    @include inline-list;
 
     li > a {
         display: block; /* 1 */
     }
+}
+
+.o-nav {
+    @include nav;
 }

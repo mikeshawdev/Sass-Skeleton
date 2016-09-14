@@ -16,16 +16,17 @@ $layout-gutter-width: $base-spacing-unit;
  *    elements, aligning them with the sides of the grid
  * 2. Fix whitespace between inline-block elements
  */
-.o-layout,
-%o-layout {
+.o-layout {
     @include rem(margin, 0 (-$layout-gutter-width)); /* 1 */
     font-size: 0; /* 2 */
 }
 
-    .o-layout__item,
-    %o-layout__item {
+    /**
+     * 1. Reset font-size from whitespace fix
+     */
+    .o-layout__item {
         display: inline-block;
         vertical-align: top;
         @include rem(padding, 0 $layout-gutter-width);
-        @include rem(font-size, $base-font-size); /* 2 */
+        @include rem(font-size, $base-font-size); /* 1 */
     }
