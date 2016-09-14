@@ -19,7 +19,6 @@
  * 4. Prevent certain mobile browsers from automatically zooming fonts.
  * 5. Fonts on OSX will look more consistent with other systems that do not
  *    render text using sub-pixel anti-aliasing.
- * 6. https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
 html {
     font-size: ($base-font-size / 16px) * 1em; /* 1 */
@@ -39,12 +38,11 @@ html {
 }
 
 /**
- * Set a vertical rhythm for the whole site
+ * Set a vertical rhythm for the site
  *
- * All block level elements get an identical bottom margin, for a consistent
- * vertical rhythm
- *
- * 1. Remove the margin from the last child of an element to avoid extra margins
+ * 1. All block level elements get an identical bottom margin, for a consistent
+ *    vertical rhythm
+ * 2. Remove the margin from the last child of an element to avoid extra margins
  */
 h1, h2, h3, h4, h5, h6,
 ul, ol, dl,
@@ -54,9 +52,9 @@ table,
 fieldset, figure,
 pre,
 %u-margin-bottom {
-    @include rem(margin, 0 0 $base-spacing-unit);
+    @include rem(margin, 0 0 $base-spacing-unit); /* 1 */
 
     > :last-child {
-        margin-bottom: 0; /* 1 */
+        margin-bottom: 0; /* 2 */
     }
 }

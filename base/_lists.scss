@@ -5,19 +5,19 @@
 */
 
 /**
- * Give all lists a consistent indentation
+ * 1. Give all lists a consistent indentation
  */
 ul, ol, dd {
-    @include rem(margin-left, $base-spacing-unit);
+    @include rem(margin-left, $base-spacing-unit); /* 1 */
 }
 
 /**
- * Avoid extra vertical spacing in nested lists
+ * 1. Avoid extra vertical spacing in nested lists
  */
 ul, ol {
     li > {
         ul, ol {
-            margin-bottom: 0;
+            margin-bottom: 0; /* 1 */
         }
     }
 }

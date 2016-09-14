@@ -13,7 +13,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /**
- * Use the type mixin to set heading sizes based on the type scale set for the
- * project
+ * Use the type mixin to set heading sizes based on the project type scale
  */
 @include type();
