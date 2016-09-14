@@ -6,8 +6,8 @@
 
 $debug: false;
 
-$content-width: 960px;
+$content-max-width: 960px;
 
 $breakpoints: (
-    "content": "(min-width: #{$content-width})"
+    "content-max-width": "(min-width: #{$content-max-width})"
 );

@@ -5,7 +5,7 @@
 */
 
 $primary-theme-colour: #abc123;
-$primary-theme-colour-highlight: darken($primary-theme-colour, 5%);
+$primary-theme-colour-accent: darken($primary-theme-colour, 5%);
 
 $page-background-colour: #fff;
 
@@ -13,4 +13,4 @@ $body-font-colour: #333;
 $heading-font-colour: #424242;
 
 $link-colour: $primary-theme-colour;
-$link-colour-highlight: $primary-theme-colour-highlight;
+$link-colour-highlight: $primary-theme-colour-accent;
