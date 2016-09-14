@@ -5,5 +5,7 @@
 */
 
 $base-spacing-unit: $base-font-size * $base-line-height;
+$very-small-spacing-unit: quarter($base-spacing-unit);
 $small-spacing-unit: halve($base-spacing-unit);
 $large-spacing-unit: double($base-spacing-unit);
+$very-large-spacing-unit: quadruple($base-spacing-unit);
