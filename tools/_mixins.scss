@@ -23,7 +23,7 @@
          */
 
         $unit: unit($value);
-        $unitless-value: strip-unit($value);
+        $unitless-value: strip-units($value);
 
         @if ($unitless-value == 0) {
             $px-values: join($px-values, 0);
