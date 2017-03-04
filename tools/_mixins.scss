@@ -4,41 +4,8 @@
 |--------------------------------------------------------------------------
 */
 
-
-/**
- * Provide rgba and rgb rules for `$property` using `$rgb` and `$opacity`
- *
- * @example scss
- * rgba(color, rgb(51, 51, 51), 0.8);
- *
- * @example scss
- * rgba(color, #bada55, 0.8);
- *
- * @param {string}  $property
- * @param {rgb|hex} $colour
- * @param {float}   $opacity
- *
- * @requires {function} splitrgb
- */
-@mixin rgba($property, $colour, $opacity) {
-    $colour: split-into-rgb($colour);
-
-    #{$property}: rgb(map-get($colour, "red"), map-get($colour, "green"), map-get($colour, "blue"));
-    #{$property}: rgba($colour, $opacity);
-}
-
-
-
-
-
 /**
  * Provide REM and PX rules for `$property` using `$values`
- *
- * @example scss
- * include rem(font-size, 16px);
- *
- * @example scss
- * include rem(font-size, 2rem);
  *
  * @param {string} $property
  * @param {mixed}  $values
@@ -56,7 +23,7 @@
          */
 
         $unit: unit($value);
-        $unitless-value: strip-unit($value);
+        $unitless-value: strip-units($value);
 
         @if ($unitless-value == 0) {
             $px-values: join($px-values, 0);
@@ -81,10 +48,6 @@
     #{$property}: $rem-values;
 }
 
-
-
-
-
 /**
  * Setup width classes using optional namespace prefix
  *
@@ -99,103 +62,171 @@
     /**
     * Whole
     */
-    .u-#{$namespace}one-whole         { width: 100%; }
-
+    .u-#{$namespace}one-whole {
+        width: 100%;
+    }
 
     /**
     * Halves
     */
-    .u-#{$namespace}one-half          { width: 50%; }
-
+    .u-#{$namespace}one-half {
+        width: 50%;
+    }
 
     /**
     * Thirds
     */
-    .u-#{$namespace}one-third         { width: 33.333%; }
-    .u-#{$namespace}two-thirds        { width: 66.666%; }
-
+    .u-#{$namespace}one-third {
+        width: 33.333%;
+    }
+    .u-#{$namespace}two-thirds {
+        width: 66.666%;
+    }
 
     /**
     * Quarters
     */
-    .u-#{$namespace}one-quarter       { width: 25%; }
-    .u-#{$namespace}two-quarters      { @extend .u-#{$namespace}one-half; }
-    .u-#{$namespace}three-quarters    { width: 75%; }
-
+    .u-#{$namespace}one-quarter {
+        width: 25%;
+    }
+    .u-#{$namespace}two-quarters {
+        @extend .u-#{$namespace}one-half;
+    }
+    .u-#{$namespace}three-quarters {
+        width: 75%;
+    }
 
     /**
     * Fifths
     */
-    .u-#{$namespace}one-fifth         { width: 20%; }
-    .u-#{$namespace}two-fifths        { width: 40%; }
-    .u-#{$namespace}three-fifths      { width: 60%; }
-    .u-#{$namespace}four-fifths       { width: 80%; }
-
+    .u-#{$namespace}one-fifth {
+        width: 20%;
+    }
+    .u-#{$namespace}two-fifths {
+        width: 40%;
+    }
+    .u-#{$namespace}three-fifths {
+        width: 60%;
+    }
+    .u-#{$namespace}four-fifths {
+        width: 80%;
+    }
 
     /**
     * Sixths
     */
-    .u-#{$namespace}one-sixth         { width: 16.666%; }
-    .u-#{$namespace}two-sixths        { @extend .u-#{$namespace}one-third; }
-    .u-#{$namespace}three-sixths      { @extend .u-#{$namespace}one-half; }
-    .u-#{$namespace}four-sixths       { @extend .u-#{$namespace}two-thirds; }
-    .u-#{$namespace}five-sixths       { width: 83.333%; }
-
+    .u-#{$namespace}one-sixth {
+        width: 16.666%;
+    }
+    .u-#{$namespace}two-sixths {
+        @extend .u-#{$namespace}one-third;
+    }
+    .u-#{$namespace}three-sixths {
+        @extend .u-#{$namespace}one-half;
+    }
+    .u-#{$namespace}four-sixths {
+        @extend .u-#{$namespace}two-thirds;
+    }
+    .u-#{$namespace}five-sixths {
+        width: 83.333%;
+    }
 
     /**
     * Eighths
     */
-    .u-#{$namespace}one-eighth        { width: 12.5%; }
-    .u-#{$namespace}two-eighths       { @extend .u-#{$namespace}one-quarter; }
-    .u-#{$namespace}three-eighths     { width: 37.5%; }
-    .u-#{$namespace}four-eighths      { @extend .u-#{$namespace}one-half; }
-    .u-#{$namespace}five-eighths      { width: 62.5%; }
-    .u-#{$namespace}six-eighths       { @extend .u-#{$namespace}three-quarters; }
-    .u-#{$namespace}seven-eighths     { width: 87.5%; }
-
+    .u-#{$namespace}one-eighth {
+        width: 12.5%;
+    }
+    .u-#{$namespace}two-eighths {
+        @extend .u-#{$namespace}one-quarter;
+    }
+    .u-#{$namespace}three-eighths {
+        width: 37.5%;
+    }
+    .u-#{$namespace}four-eighths {
+        @extend .u-#{$namespace}one-half;
+    }
+    .u-#{$namespace}five-eighths {
+        width: 62.5%;
+    }
+    .u-#{$namespace}six-eighths {
+        @extend .u-#{$namespace}three-quarters;
+    }
+    .u-#{$namespace}seven-eighths {
+        width: 87.5%;
+    }
 
     /**
     * Tenths
     */
-    .u-#{$namespace}one-tenth         { width: 10%; }
-    .u-#{$namespace}two-tenths        { @extend .u-#{$namespace}one-fifth; }
-    .u-#{$namespace}three-tenths      { width: 30%; }
-    .u-#{$namespace}four-tenths       { @extend .u-#{$namespace}two-fifths; }
-    .u-#{$namespace}five-tenths       { @extend .u-#{$namespace}one-half; }
-    .u-#{$namespace}six-tenths        { @extend .u-#{$namespace}three-fifths; }
-    .u-#{$namespace}seven-tenths      { width: 70%; }
-    .u-#{$namespace}eight-tenths      { @extend .u-#{$namespace}four-fifths; }
-    .u-#{$namespace}nine-tenths       { width: 90%; }
-
+    .u-#{$namespace}one-tenth {
+        width: 10%;
+    }
+    .u-#{$namespace}two-tenths {
+        @extend .u-#{$namespace}one-fifth;
+    }
+    .u-#{$namespace}three-tenths {
+        width: 30%;
+    }
+    .u-#{$namespace}four-tenths {
+        @extend .u-#{$namespace}two-fifths;
+    }
+    .u-#{$namespace}five-tenths {
+        @extend .u-#{$namespace}one-half;
+    }
+    .u-#{$namespace}six-tenths {
+        @extend .u-#{$namespace}three-fifths;
+    }
+    .u-#{$namespace}seven-tenths {
+        width: 70%;
+    }
+    .u-#{$namespace}eight-tenths {
+        @extend .u-#{$namespace}four-fifths;
+    }
+    .u-#{$namespace}nine-tenths {
+        width: 90%;
+    }
 
     /**
     * Twelfths
     */
-    .u-#{$namespace}one-twelfth       { width: 8.333%; }
-    .u-#{$namespace}two-twelfths      { @extend .u-#{$namespace}one-sixth; }
-    .u-#{$namespace}three-twelfths    { @extend .u-#{$namespace}one-quarter; }
-    .u-#{$namespace}four-twelfths     { @extend .u-#{$namespace}one-third; }
-    .u-#{$namespace}five-twelfths     { width: 41.666% }
-    .u-#{$namespace}six-twelfths      { @extend .u-#{$namespace}one-half; }
-    .u-#{$namespace}seven-twelfths    { width: 58.333%; }
-    .u-#{$namespace}eight-twelfths    { @extend .u-#{$namespace}two-thirds; }
-    .u-#{$namespace}nine-twelfths     { @extend .u-#{$namespace}three-quarters; }
-    .u-#{$namespace}ten-twelfths      { @extend .u-#{$namespace}five-sixths; }
-    .u-#{$namespace}eleven-twelfths   { width: 91.666%; }
+    .u-#{$namespace}one-twelfth {
+        width: 8.333%;
+    }
+    .u-#{$namespace}two-twelfths {
+        @extend .u-#{$namespace}one-sixth;
+    }
+    .u-#{$namespace}three-twelfths {
+        @extend .u-#{$namespace}one-quarter;
+    }
+    .u-#{$namespace}four-twelfths {
+        @extend .u-#{$namespace}one-third;
+    }
+    .u-#{$namespace}five-twelfths {
+        width: 41.666%
+    }
+    .u-#{$namespace}six-twelfths {
+        @extend .u-#{$namespace}one-half;
+    }
+    .u-#{$namespace}seven-twelfths {
+        width: 58.333%;
+    }
+    .u-#{$namespace}eight-twelfths {
+        @extend .u-#{$namespace}two-thirds;
+    }
+    .u-#{$namespace}nine-twelfths {
+        @extend .u-#{$namespace}three-quarters;
+    }
+    .u-#{$namespace}ten-twelfths {
+        @extend .u-#{$namespace}five-sixths;
+    }
+    .u-#{$namespace}eleven-twelfths {
+        width: 91.666%;
+    }
 }
-
-
-
-
 
 /**
  * Mixin to setup our headings using the set type scale
- *
- * @example scss
- * include type();
- *
- * @example scss
- * include type(1.25);
  *
  * @param {float} $type-scale ($base-type-scale)
  *
@@ -240,28 +271,17 @@
     }
 }
 
-
-
-
-
 /**
  * Force text to truncate at a specified width
  *
- * @example scss
- * include truncate(100%);
- *
  * @param {mixed} $boundary (100%)
  */
-@mixin truncate($boundary: 100%){
+@mixin truncate($boundary: 100%) {
     max-width: $boundary;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-
-
-
 
 /**
  * Apply clearfix to an element
@@ -290,17 +310,13 @@
     }
 }
 
-
-
-
-
 /**
- * Generate styles for hover and focus in one go
+ * Wrap styles for multiple states at once
+ *
+ * @param list $states
  */
-@mixin hocus() {
-
-    &:hover,
-    &:focus {
+@mixin states($states...) {
+    &:#{to-string($states, ', &:')} {
         @content;
     }
 }

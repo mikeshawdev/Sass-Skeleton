@@ -4,17 +4,17 @@
 |--------------------------------------------------------------------------
 */
 
-
 /**
  * For boxing off content
  *
- * @link http://bit.ly/1p4GwXh
- *
  * 1. So we can apply the class to naturally-inline elements
  */
-.o-box,
-%o-box {
+@mixin box ($padding: $base-spacing-unit) {
     @include clearfix();
     display: block; /* 1 */
-    @include rem(padding, $base-spacing-unit);
+    @include rem(padding, $padding);
+}
+
+.o-box {
+    @include box;
 }
