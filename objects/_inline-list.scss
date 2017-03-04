@@ -4,28 +4,22 @@
 |--------------------------------------------------------------------------
 */
 
-
 /**
  * Throw a list into horizontal mode and remove the list styles
  *
- * @link csswizardry.com/2011/09/the-nav-abstraction
- *
- * 1. Make sure we take away any identation that may be applied to lists
+ * 1. Remove any left-hand identation
  * 2. Make list items line up next to each other
- * 3. Make links fill their list items which makes selecting them easier,
- *    especially on touch devices
  */
-.o-inline-list,
-%o-inline-list {
+@mixin inline-list {
     list-style: none;
-    margin-left: 0;   /* 1 */
-    padding-left: 0;  /* 1 */
+    margin-left: 0; /* 1 */
+    padding-left: 0; /* 1 */
 
     > li {
         display: inline-block; /* 2 */
-
-        > a {
-            display: block; /* 3 */
-        }
     }
+}
+
+.o-inline-list {
+    @include inline-list;
 }

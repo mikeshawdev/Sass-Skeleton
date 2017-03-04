@@ -1,20 +1,18 @@
 /*
 |--------------------------------------------------------------------------
-| $ELEMENTS.HEADINGS
+| $BASE.HEADINGS
 |--------------------------------------------------------------------------
 */
 
-
 h1, h2, h3, h4, h5, h6,
 .u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6 {
-    font-family: $base-heading-font-stack;
-    font-weight: $base-heading-font-weight;
-    line-height: $base-heading-line-height;
-    color: $base-heading-font-colour;
+    font-family: $heading-font-stack;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    color: $heading-font-colour;
 }
 
 /**
- * Use the type mixin to set heading sizes based on the type scale set for the
- * project
+ * Use the type mixin to set heading sizes based on the project type scale
  */
 @include type();

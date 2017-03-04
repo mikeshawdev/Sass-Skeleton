@@ -1,16 +1,15 @@
 /*
 |--------------------------------------------------------------------------
-| $ELEMENTS.LINKS
+| $BASE.LINKS
 |--------------------------------------------------------------------------
 */
 
-
 a {
-    color: $base-link-colour;
+    color: $link-colour;
     text-decoration: none;
     transition: color .2s ease-in-out;
 
-    @include hocus {
-        color: darken($base-link-colour, 10%);
+    @include states (hover, focus) {
+        color: $link-colour-highlight;
     }
 }
